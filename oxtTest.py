@@ -22,6 +22,8 @@ try:
     contents=g.read()
     if contents.count('<manifest:manifest xmlns:manifest="http://openoffice.org/2001/manifest">') > 0:
         pass
+    elif contents.count('<manifest:manifest') > 0:
+        pass
     else:
         print('There is a xml declaration missing in the file manifest.xml starting with the following xml-tag: \n'
         '<manifest:manifest xmlns:manifest="http://openoffice.org/2001/manifest">.')
