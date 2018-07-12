@@ -7,12 +7,24 @@ zip=zipfile.ZipFile(extensionfile)
 try:
     f=zip.open('description.xml')
     contents=f.read()
+
     if contents.count('http://libreoffice.org/extensions/description/2011') >0:
-        print('LibreOffice extension declaration included')
+        print('LibreOffice extension declaration inclueded')
     elif contents.count('http://openoffice.org/extensions/description/2006') >0:
         print('OpenOffice extension declaration included')
     else:
         print('There is a xml extension declarartion missing in the description.xml.')
+        
+    if contents.count('identifier value=') >0:
+        print('Identifier tag for extension is included.')
+    else:
+        print('Identifier tag for extension is missing.')
+        
+    if contents.count('license-text xlink:href=') >0:
+        print('Tag for License text link is included.')
+    else:
+        print('There is a tag for the license text link missing in the description.xml file.')
+    
     f.close
 except (KeyError):
     print ('There is a file description.xml missing in the extension. Thus the extension is not valid!')
