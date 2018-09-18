@@ -55,13 +55,26 @@ try:
     else:
         print ('The icon xml-tag with a link to an icon for the Extension is missing.')
 
+    if display.count > 0:
+        print ('The display name xml-tag is set.')
+    else:
+        print ('There is no display name xml-tag set and thus the extension will not'
+               ' show a name in the Extension-Manager')
+
+    if description.count > 0:
+        print ('The description xml-tag is included in the description.xml file.')
+    else:
+        print ('Please add a description xml-tag to the description.xml file of your extension.')
+
     if dependencies.count > 0:
         print ('Information about program version included.')
     else:
         print ('There is no information about the (minimal / maximal program version included')
 
-
-
+    if publisher.count > 0:
+        print ('Publisher xml-tag included.')
+    else:
+        print ('The publisher xml-tag with the extension author is missing.')
 
     f.close
 except (KeyError):
