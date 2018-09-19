@@ -53,7 +53,9 @@ try:
     if icon.count > 0:
         print ('The icon xml-tag is included.')
     else:
-        print ('The icon xml-tag with a link to an icon for the Extension is missing.')
+        print ('The icon xml-tag with a link to an icon for the Extension is missing. Please add the following xml-tag:\n'
+               '<icon>\n<default xlink:href="[relative link to the extensionicon in file format *.png]" />\n'
+               '</icon>')
 
     if display.count > 0:
         print ('The display name xml-tag is set.')
