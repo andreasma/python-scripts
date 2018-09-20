@@ -37,13 +37,18 @@ try:
     if version.count > 0:
         print ('Extension version information included.')
     else:
-        print ('There is an Extension version information missing.')
+        print ('There is an Extension version information missing.\n'
+               'Please add the following xml-tag:\n'
+               '<version value="[value for the version - a number]"/>')
 
     if registration.count > 0:
         print ('Information about license included.')
     else:
         print ('There is a link to the license information missing. \nPlease add this link and make sure that it'
-               'points to the license file inside the Extension.')
+               'points to the license file inside the Extension. Thus link could be as follows:\n'
+               '<registration>\n<simple-license accept-by="admin" >\n'
+               '<license-text xlink:href="[link to the license file in file format *.txt]" />\n'
+               '</simple-license>\n</registration>')
 
     if identifier.count > 0:
         print ('The identifier xml-tag is included.')
