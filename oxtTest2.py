@@ -53,7 +53,9 @@ try:
     if identifier.count > 0:
         print ('The identifier xml-tag is included.')
     else:
-        print ('There is the identifier xml-tag missing. ')
+        print ('There is the identifier xml-tag missing. Please add an identifier'
+               'xml-tag like the following example:\n'
+               '<identifier value="org.[your organisation].[extension name]"/>')
 
     if icon.count > 0:
         print ('The icon xml-tag is included.')
@@ -65,9 +67,12 @@ try:
     if display.count > 0:
         print ('The display name xml-tag is set.')
     else:
-        print ('There is no display name xml-tag set and thus the extension will not'
-               ' show a name in the Extension-Manager')
-
+        print ('There is no display name xml-tag set and thus the extension will not '
+               'show a name in the Extension-Manager. Please add a xml-tag with the'
+               'a display name like the following example:\n'
+               '<display-name>\n'
+               '<name>[Name that should be shown in the extension manager]\n'
+               '</name>\n</display-name>')
     if description.count > 0:
         print ('The description xml-tag is included in the description.xml file.')
     else:
@@ -81,7 +86,11 @@ try:
     if publisher.count > 0:
         print ('Publisher xml-tag included.')
     else:
-        print ('The publisher xml-tag with the extension author is missing.')
+        print ('The publisher xml-tag with the extension author is missing. Please add a'
+               'xml-tag with the publisher of the extension in the following manner:\n'
+               '<publisher>\n'
+               '<name xlink:href="[link to the website or blog of the author]">[name of the author\n'
+               '</name>\n</publisher>')
 
     f.close
 except (KeyError):
