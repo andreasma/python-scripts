@@ -76,12 +76,25 @@ try:
     if description.count > 0:
         print ('The description xml-tag is included in the description.xml file.')
     else:
-        print ('Please add a description xml-tag to the description.xml file of your extension.')
+        print ('Please add an extension-description xml-tag to the description.xml file of your extension '
+               'similar to the following example (the links points to the text files with the description;'
+               'it is possible to add a description for all supported language of the extension:\n'
+               '<extension-description>\n'
+               '<src xlink:href="description/description_en.txt" lang="en" />\n'
+               '<src xlink:href="description/description_de.txt" lang="de" />\n'
+               '</extension-descritption>')
 
     if dependencies.count > 0:
         print ('Information about program version included.')
     else:
-        print ('There is no information about the (minimal / maximal program version included')
+        print ('There is no information about the (minimal / maximal program version included. Please'
+               'add a xml-tag with this information to the description.xml file like the following'
+               'example:\n'
+               '<dependencies xmlns:lo="http://libreoffice.org/extensions/description/2011">\n'
+               '<lo:LibreOffice-minimal-version name="LibreOffice 4.2" value="4.2"/>\n'
+               '</dependencies>\n'
+               'If you want to set the maximum program version, replace the word minimum with'
+               'maximum.')
 
     if publisher.count > 0:
         print ('Publisher xml-tag included.')
