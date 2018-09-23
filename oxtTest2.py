@@ -15,7 +15,7 @@ try:
     if 'http://openoffice.org/extensions/description/2006' in root.tag:
         print ('OpenOffice extension declaration included')
     elif 'http://libreoffice.org/extensions/description/2011' in root.tag:
-        print ('LibreOffice extension declaration inclueded')
+        print ('LibreOffice extension declaration included')
     else:
         ('There is a xml extension declarartion missing in the description.xml.')
 
@@ -108,3 +108,16 @@ try:
     f.close
 except (KeyError):
     print ('There is a file description.xml missing in the extension. Thus the extension is not valid!')
+
+try:
+    tree = ET.parse(zip.open('META-INF/manifest.xml'))
+    root = tree.getroot()
+    if "http://openoffice.org/2001/manifest" in root.tag:
+        pass
+    else:
+        print ('A manifest xml-tag is missing in the manifest.xml file.')
+
+
+except (KeyError):
+    print ('There is a file manifest.xml missing in the extension. Please add such file to the '
+           'extension to get it valid!')
