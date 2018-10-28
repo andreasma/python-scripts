@@ -27,6 +27,7 @@ try:
     for element in childtags:
         version = re.findall(r'version', element)
         registration = re.findall(r'registration', element)
+        license = re.findall(r'license', element)
         identifier = re.findall(r'identifier', element)
         icon = re.findall(r'icon', element)
         display= re.findall(r'display-name', element)
@@ -41,7 +42,7 @@ try:
                'Please add the following xml-tag:\n'
                '<version value="[value for the version - a number]"/>')
 
-    if registration.count > 0:
+    if (registration.count > 0) or (license > 0) :
         print ('Information about license included.')
     else:
         print ('There is a link to the license information missing. \nPlease add this link and make sure that it'
