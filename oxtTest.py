@@ -1,7 +1,8 @@
 import zipfile
 import errno
+import sys
 
-extensionfile= raw_input('Please type in the name of the extension file you want to investigate: ')
+extensionfile = sys.argv[1]
 
 zip=zipfile.ZipFile(extensionfile)
 try:
